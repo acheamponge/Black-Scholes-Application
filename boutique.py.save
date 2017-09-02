@@ -1,0 +1,12 @@
+from googlefinance import getQuotes
+import json
+import csv
+
+stocks = ['AAPL','GOOGL', 'AMZN', 'FB', 'SSNLF', 'MSFT', 'SNE', 'IBM', 'NTDOY', 'ORCL', 'VMW', 'INTC', 'HPQ', 'DVMT',
+'CSCO', 'ADBE', 'SAP', 'LNVGY', 'RHT', 'SYMC', 'TWTR']
+
+stock_json = json.dumps(getQuotes(stock), indent=2)
+
+stock_parsed = json.loads(stock_json)
+
+print stock_parsed

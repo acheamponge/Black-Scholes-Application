@@ -22,4 +22,4 @@ companies = pandas.read_csv("companies.csv")
 
 merged = company_stock.merge(companies, on = 'StockSymbol')
 
-merged.to_csv('new.csv')
+merged.to_csv('new.csv', index=False)

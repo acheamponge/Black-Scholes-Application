@@ -16,3 +16,10 @@ stock_json = json.dumps(getQuotes(stocks), indent=2)
 stock_df = pandas.read_json(stock_json)
 
 stock_df.to_csv("stock.csv")
+
+company_stock = pandas.read_csv("stock.csv")
+companies = pandas.read_csv("companies.csv")
+
+merged = company_stock.merge(companies, on = 'StockSymbol')
+
+merged.to_csv('new.csv')

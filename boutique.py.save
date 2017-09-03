@@ -5,8 +5,9 @@ import csv
 stocks = ['AAPL','GOOGL', 'AMZN', 'FB', 'SSNLF', 'MSFT', 'SNE', 'IBM', 'NTDOY', 'ORCL', 'VMW', 'INTC', 'HPQ', 'DVMT',
 'CSCO', 'ADBE', 'SAP', 'LNVGY', 'RHT', 'SYMC', 'TWTR']
 
-stock_json = json.dumps(getQuotes(stock), indent=2)
 
-stock_parsed = json.loads(stock_json)
+for stock in stocks:
+    with open('data.txt', 'w') as outfile:
+        json.dumps(getQuotes(stock), indent=2)    
 
-print stock_parsed
+
